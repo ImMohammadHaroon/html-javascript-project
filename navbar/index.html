@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/devowl-removebg-preview.png">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header__logo">
+        <a href="#"> <span>DevOwl</span></a>
+      </div>
+      <div class="header__navigation-links">
+        <div
+          class="header__hamburger-icon"
+          id="header__hamburger-icon"
+          onclick=" showHideNavbar()"
+        >
+          <span id="header__hamburger-top-line"></span>
+          <span id="header__hamburger-middle-line"></span>
+          <span id="header__hamburger-bottom-line"></span>
+        </div>
+        <div class="header__links" id="header__nav-links">
+          <a href="#" class="header__links--active">HOME</a>
+          <a href="#">ABOUT</a>
+          <a href="#">WORKS</a>
+          <a href="#">CONTACT US</a>
+          <div class="header__social">
+            <a href="https://www.instagram.com/cxp_codes/" target="_blank">
+              <img src="./assets/instagram.svg" alt="ig icon" />
+            </a>
+            <a href="#" target="_blank">
+              <img src="./assets/linkedin.svg" alt="linkedin icon" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero section  -->
+    <div class="hero">
+      <h2>Responsive Navbar With Animations</h2>
+    </div>
+
+    <script>
+      function showHideNavbar() {
+        const navLinksDisplay = document.getElementById('header__nav-links');
+        const iconMiddleLine = document.getElementById(
+          'header__hamburger-middle-line'
+        );
+        const iconTopLine = document.getElementById(
+          'header__hamburger-top-line'
+        );
+        const iconBottomLine = document.getElementById(
+          'header__hamburger-bottom-line'
+        );
+        if (navLinksDisplay.style.display === 'flex') {
+          navLinksDisplay.style.display = 'none';
+          iconMiddleLine.style.display = 'inline-block';
+          iconTopLine.classList.remove('header__icon-line-animate');
+          iconBottomLine.classList.remove('header__icon-bottom-line-animate');
+          navLinksDisplay.classList.remove('header__links--animate');
+        } else {
+          navLinksDisplay.style.display = 'flex';
+          iconMiddleLine.style.display = 'none';
+          iconTopLine.classList.add('header__icon-line-animate');
+          iconBottomLine.classList.add('header__icon-bottom-line-animate');
+          navLinksDisplay.classList.add('header__links--animate');
+        }
+      }
+    </script>
+  </body>
+</html>
