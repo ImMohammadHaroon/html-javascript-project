@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Bar Animation on Scroll</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+
+    <div id="scrollbar"></div>
+    <div id="progressbar"></div>
+
+    <div id="cont1">
+        <div id="boxx">CodeXpool</div>
+    </div>
+
+    <div id="cont2">
+
+        <div id="headskill">Skills</div>
+        <div class="skillbox">
+            <p class="sk">HTML</p>
+            <div class="container" data-aos="fade-right">
+                <div class="htmlbar bars" id="htBar">90%</div>
+                <div class="progress-line1 html">
+                    <span></span>
+                </div>
+            </div>
+
+
+
+            <p class="sk">CSS</p>
+            <div class="container" data-aos="fade-right">
+                <div class="cssbar bars" id="csBar">80%
+                </div>
+                <div class="progress-line2 css">
+                    <span></span>
+                </div>
+            </div>
+
+
+
+
+            <p class="sk">JavaScript</p>
+            <div class="container" data-aos="fade-right">
+                <div class="jsbar bars" id="jsBar">65%</div>
+                <div class="progress-line3 js">
+                    <span></span>
+                </div>
+            </div>
+
+
+            <p class="sk">Node.js</p>
+            <div class="container" data-aos="fade-right">
+                <div class="nodejsbar bars" id="nodeBar">60%</div>
+                <div class="progress-line4 nodejs">
+                    <span></span>
+                </div>
+            </div>
+
+
+
+            <p class="sk">Express.js</p>
+            <div class="container" data-aos="fade-right">
+                <div class="expressbar bars" id="expressBar">60%</div>
+                <div class="progress-line5 express">
+                    <span></span>
+                </div>
+            </div>
+
+
+
+
+            <p class="sk">MongoDB</p>
+            <div class="container" data-aos="fade-right">
+                <div class="mongodbbar bars" id="mongodbBar">70%</div>
+                <div class="progress-line6 mongodb">
+                    <span></span>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1500
+        });
+    </script>
+
+    <script>
+        let progress = document.getElementById('progressbar');
+        window.onscroll = function () {
+            let totalHeight = document.body.scrollHeight + window.innerHeight;
+            let progressHeight = (window.pageYOffset / totalHeight) * 28.1;
+            progress.style.display = 'revert';
+            progress.style.height = progressHeight + "%";
+            let flowBar1 = document.getElementById('htBar');
+            let flowBar2 = document.getElementById('csBar');
+            let flowBar3 = document.getElementById('jsBar');
+            let flowBar4 = document.getElementById('nodeBar');
+            let flowBar5 = document.getElementById('expressBar');
+            let flowBar6 = document.getElementById('mongodbBar');
+            if (progressHeight > 5) {
+
+                flowBar1.style.animationName = 'animateskillbar11';
+                flowBar2.style.animationName = 'animateskillbar22';
+                flowBar3.style.animationName = 'animateskillbar33';
+                flowBar4.style.animationName = 'animateskillbar44';
+                flowBar5.style.animationName = 'animateskillbar55';
+                flowBar6.style.animationName = 'animateskillbar66';
+            }
+            else {
+                flowBar1.style.animationName = 'animateskillbar1';
+                flowBar2.style.animationName = 'animateskillbar2';
+                flowBar3.style.animationName = 'animateskillbar3';
+                flowBar4.style.animationName = 'animateskillbar4';
+                flowBar5.style.animationName = 'animateskillbar5';
+                flowBar6.style.animationName = 'animateskillbar6';
+            }
+
+        }
+    </script>
+</body>
+
+</html>
+   
